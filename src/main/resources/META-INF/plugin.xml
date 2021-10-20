@@ -6,6 +6,17 @@
 
     <depends>com.intellij.modules.platform</depends>
 
+    <actions>
+        <action
+            id="GenerateObjectId.ToolsMenu"
+            class="com.github.mholzer85.generateobjectid.actions.GenerateObjectIdAction"
+            text="Generate ObjectId"
+            description="Paste a new ObjectId in the current editor">
+            <add-to-group group-id="ToolsMenu" anchor="last" />
+            <add-to-group group-id="EditorPopupMenu" anchor="last" />
+        </action>
+    </actions>
+
     <extensions defaultExtensionNs="com.intellij">
         <applicationService serviceImplementation="com.github.mholzer85.generateobjectid.services.MyApplicationService"/>
         <projectService serviceImplementation="com.github.mholzer85.generateobjectid.services.MyProjectService"/>
