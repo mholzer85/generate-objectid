@@ -2,18 +2,24 @@
 <idea-plugin>
     <id>com.github.mholzer85.generateobjectid</id>
     <name>Generate ObjectId</name>
-    <vendor>mholzer85</vendor>
+    <vendor email="mholzer85@gmail.com" url="https://github.com/mholzer85">Mathias Holzer</vendor>
+
+    <description><![CDATA[
+    Generates new MongoDB / Bson ObjectIds.
+    Generated ObjectId can either be put directly into an open file in the editor or copied to the clipboard.
+    ]]></description>
 
     <depends>com.intellij.modules.platform</depends>
 
     <actions>
         <action
-            id="GenerateObjectId.ToolsMenu"
-            class="com.github.mholzer85.generateobjectid.actions.GenerateObjectIdAction"
-            text="Generate ObjectId"
-            description="Paste a new ObjectId in the current editor">
-            <add-to-group group-id="ToolsMenu" anchor="last" />
-            <add-to-group group-id="EditorPopupMenu" anchor="last" />
+                id="database.actions.GenerateObjectId"
+                class="com.github.mholzer85.generateobjectid.actions.GenerateObjectIdAction"
+                text="Generate ObjectId"
+                description="Paste a new ObjectId in the current editor"
+                icon="AllIcons.Json.Object">
+            <add-to-group group-id="ToolsMenu" anchor="last"/>
+            <add-to-group group-id="EditorPopupMenu" anchor="last"/>
         </action>
     </actions>
 
