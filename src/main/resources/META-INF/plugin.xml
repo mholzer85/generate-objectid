@@ -13,23 +13,29 @@
 
     <actions>
         <action
-                id="database.actions.GenerateObjectId"
-                class="com.github.mholzer85.generateobjectid.actions.GenerateObjectIdAction"
-                text="Generate ObjectId"
+                id="GenerateObjectIdToEditorAction"
+                class="com.github.mholzer85.generateobjectid.actions.GenerateObjectIdToEditorAction"
+                text="Generate ObjectId and paste to editor"
                 description="Paste a new ObjectId in the current editor"
                 icon="AllIcons.Json.Object">
             <add-to-group group-id="ToolsMenu" anchor="last"/>
             <add-to-group group-id="EditorPopupMenu" anchor="last"/>
         </action>
+        <action
+                id="GenerateObjectIdToClipboardAction"
+                class="com.github.mholzer85.generateobjectid.actions.GenerateObjectIdToClipboardAction"
+                text="Generate ObjectId and copy to clipboard"
+                description="Copy a new ObjectId to the clipboard"
+                icon="AllIcons.Actions.Copy">
+            <add-to-group group-id="ToolsMenu" relative-to-action="GenerateObjectIdToEditorAction" anchor="after"/>
+            <add-to-group group-id="EditorPopupMenu" relative-to-action="GenerateObjectIdToEditorAction"
+                          anchor="after"/>
+        </action>
     </actions>
 
     <extensions defaultExtensionNs="com.intellij">
-        <applicationService serviceImplementation="com.github.mholzer85.generateobjectid.services.MyApplicationService"/>
-        <projectService serviceImplementation="com.github.mholzer85.generateobjectid.services.MyProjectService"/>
     </extensions>
 
     <applicationListeners>
-        <listener class="com.github.mholzer85.generateobjectid.listeners.MyProjectManagerListener"
-                  topic="com.intellij.openapi.project.ProjectManagerListener"/>
     </applicationListeners>
 </idea-plugin>
